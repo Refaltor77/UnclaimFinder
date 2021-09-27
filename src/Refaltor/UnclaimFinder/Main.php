@@ -11,7 +11,7 @@ class Main extends PluginBase
     public function onEnable()
     {
         $this->getServer()->getPluginManager()->registerEvents(new PlayerListener($this), $this);
-        $this-saveDefaultConfig();
+        $this-saveResource('config.yml');
         $array = $this->getConfig()->getAll();
         $this->getScheduler()->scheduleRepeatingTask(new PopupTask($this), $array['task_tick']);
     }
